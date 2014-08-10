@@ -9,8 +9,9 @@ buildscript {
     }
 }
 
-apply plugin: 'java'
+apply plugin: 'groovy'
 apply plugin: 'org.akhikhl.wuff.eclipse-rcp-app'
+
 
 products {
     product platform: 'linux', arch: 'x86_64'
@@ -34,7 +35,13 @@ jar {
         instruction 'Require-Bundle', 'org.eclipse.e4.ui.workbench'
     }
 }
+
+repositories {
+    jcenter()
+}
+
 dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.+'
 
     // for -console 5555 to work
     runtime "$eclipseMavenGroup:org.eclipse.equinox.console:+"
