@@ -14,8 +14,6 @@ apply plugin: 'org.akhikhl.wuff.eclipse-rcp-app'
 
 
 products {
-    product platform: 'linux', arch: 'x86_64'
-
     launchParameters << '-application'
     launchParameters << 'org.eclipse.e4.ui.workbench.swt.E4Application'
 }
